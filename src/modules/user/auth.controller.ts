@@ -39,8 +39,8 @@ const loginUser = async(req:Request,res:Response)=>{
         const payload = req.body;
 
         const user = await authService.loginUserIntoDB(payload)
-                const accessToken = user.accesstoken
-                const refreshToken = user.refreshtoken
+                const accessToken = user.accessToken
+                const refreshToken = user.refreshToken
 
         res.cookie("accessToken",accessToken,{
             httpOnly: true,
