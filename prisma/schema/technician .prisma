@@ -20,5 +20,5 @@ model TechnicianProfiles {
 
   reviews Reviews[]
 
-  @@map("technicianProfiles ")
+  @@map("technicianProfiles")
 }
