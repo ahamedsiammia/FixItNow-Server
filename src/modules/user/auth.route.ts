@@ -8,7 +8,7 @@ const router = Router();
 
 router.post("/register",authController.createUser);
 
-router.get("/login",authController.loginUser);
+router.post("/login",authController.loginUser);
 
 router.get("/me",auth(userRole.ADMIN,userRole.USER,userRole.TECHNICIAN),authController.getMe);
 
