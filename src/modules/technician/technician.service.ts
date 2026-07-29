@@ -168,6 +168,13 @@ const getSingleTechnician =async(id:string)=>{
     const technician= await prisma.technicianProfiles.findUnique({
         where:{
             id
+        },
+        include:{
+            user : {
+                omit : {
+                    password : true
+                }
+            }
         }
     });
 

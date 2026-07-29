@@ -124,7 +124,19 @@ const getMeIntoDB = async(userId : string)=>{
         }
     });
 
-    return {user}
+    if(user?.role === "TECHNICIAN"){
+        const technician = await prisma.technicianProfiles.findUnique({
+            where : {
+                userId : user.id
+            }
+        })
+
+        const returnData = {...user,technician}
+        return returnData
+    };
+
+
+    return user
 }
 
 
