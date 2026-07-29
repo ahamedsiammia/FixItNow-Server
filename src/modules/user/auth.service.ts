@@ -85,15 +85,15 @@ const loginUserIntoDB = async(payload:LIuser)=>{
     } as IjwtPayload
 
 
-    const accessToken = await createToken(jwtPayload,config.jwt_access_secret,config.jwt_access_expires_in);
+    const accesstoken = await createToken(jwtPayload,config.jwt_access_secret,config.jwt_access_expires_in);
 
 
-    const refreshToken = await createToken(jwtPayload,config.jwt_refresh_secret,config.jwt_refresh_expires_in);
+    const refreshtoken = await createToken(jwtPayload,config.jwt_refresh_secret,config.jwt_refresh_expires_in);
 
     const {id,name,email : userEmail,address,phone,role,status,profileImage,createdAt,updatedAt} = isExistUser;
     
-    const accesstoken = accessToken.data
-    const refreshtoken = refreshToken.data
+    const accessToken = accesstoken.data
+    const refreshToken = refreshtoken.data
 
     return {
         id,
@@ -106,8 +106,8 @@ const loginUserIntoDB = async(payload:LIuser)=>{
         profileImage,
         createdAt,
         updatedAt,
-        accesstoken,
-        refreshtoken
+        accessToken,
+        refreshToken
     }
 
 
