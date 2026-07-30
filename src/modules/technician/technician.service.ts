@@ -256,7 +256,7 @@ const getBookingsIntoDB = async(userId:string)=>{
         }
     });
 
-    return {bookings}
+    return bookings
 }
 
 const updateBookingStatusIntoDB = async (payload: BookingStatusI,bookingId: string,userId: string)=>{
@@ -293,7 +293,7 @@ const updateBookingStatusIntoDB = async (payload: BookingStatusI,bookingId: stri
     },
   });
 
-  return {updatedBooking};
+  return updatedBooking;
 };
 
 export const technicianService = {

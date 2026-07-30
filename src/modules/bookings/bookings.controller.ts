@@ -41,7 +41,7 @@ const getBookingsWithUsers = async(req:Request,res:Response)=>{
         sendResponse(res,{
             success : true,
             statusCode : HttpStatus.OK,
-            message : `${bookings.bookings.length === 0 ? "Your are Not booking any service" :"Your booking retrieved successfully"}`,
+            message : `${bookings.length === 0 ? "Your are Not booking any service" :"Your booking retrieved successfully"}`,
             data : bookings
         })
         

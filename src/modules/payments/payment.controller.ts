@@ -42,10 +42,10 @@ const verifyPayment =async(req:Request,res:Response)=>{
         const response = await paymentService.verifyPayment(bookingId as string,tranId as string,status as string,payload)
 
         if(response === "success"){
-            return res.redirect("https://cosmic-pegasus-53f0d7.netlify.app")
+            return res.redirect("/payment/success")
         }else if(response === "fail"){
             return res.redirect("https://www.memberstack.com/webflow/failed-payment-page?utm_source=Pinterest&utm_medium=organic")
-        }else if(response === "cancel") res.redirect("https://www.youtube.com")
+        }else if(response === "cancel") res.redirect("/payment/cancel")
         
     } catch (error : any) {
         sendResponse(res,{

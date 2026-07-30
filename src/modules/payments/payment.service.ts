@@ -65,7 +65,7 @@ const verifyPayment =async(bookingId : string,tranId: string,status:string,paylo
             id : bookingId
         },
         data :{
-            stats : "COMPLETED"
+            stats : "IN_PROGRESS"
         }
     })
 
