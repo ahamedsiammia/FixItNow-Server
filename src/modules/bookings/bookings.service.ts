@@ -49,7 +49,7 @@ const getBookingWithUser =async(customerId : string)=>{
         }
     });
 
-    return {bookings}
+    return bookings
 };
 
 
