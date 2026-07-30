@@ -47,7 +47,8 @@ export interface IServices {
     description ?: string
     price : number
     duration : number
-    location : string
+    location : string,
+    imageUrl : string
 }
 
 

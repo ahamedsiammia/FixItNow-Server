@@ -13,6 +13,7 @@ model Bookings {
   service Services @relation(fields: [serviceId], references: [id], onDelete: Cascade)
 
   scheduledDate DateTime
+  location      String?
   stats         BookingStatus @default(REQUESTED)
   totalAmount   Int
   notes         String?       @db.VarChar(255)

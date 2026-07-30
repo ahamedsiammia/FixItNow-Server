@@ -38,7 +38,7 @@ const createBookingIntoDB = async(payload:IBooking,customerId : string)=>{
         }
     });
 
-    return {booking}
+    return booking
 };
 
 
