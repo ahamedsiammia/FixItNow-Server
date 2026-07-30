@@ -40,9 +40,9 @@ const verifyPayment =async(req:Request,res:Response)=>{
         // console.log("form verify payment ",req.body,bookingId,tranId,status);
 
         const response = await paymentService.verifyPayment(bookingId as string,tranId as string,status as string,payload)
-
+console.log(response,"this is payment response");
         if(response === "success"){
-            return res.redirect("/payment/success")
+            return res.redirect("https://siamahamed.netlify.app")
         }else if(response === "fail"){
             return res.redirect("https://www.memberstack.com/webflow/failed-payment-page?utm_source=Pinterest&utm_medium=organic")
         }else if(response === "cancel") res.redirect("/payment/cancel")
