@@ -41,6 +41,7 @@ const initiatePayment =async(booking :Bookings,user : User)=>{
     console.log("initeate payment",data);
     const payment  = {
         bookingId : booking.id as string,
+        customerId : user.id,
         transactionId : tranId as string,
         amount : booking.totalAmount as number,
         provider : "null" as string,

@@ -2,6 +2,8 @@ model Payments {
   id            String        @id @default(uuid())
   bookingId     String        @unique
   booking       Bookings      @relation(fields: [bookingId], references: [id])
+  customerId    String       
+  user          User          @relation(fields: [customerId],references: [id])
   transactionId String        @unique @db.VarChar(255)
   amount        Decimal
   provider      String        @db.VarChar(255)
@@ -9,7 +11,7 @@ model Payments {
   paidAt        DateTime      @default(now())
   createdAt     DateTime      @default(now())
   meta          Json?
-
+  
   @@map("payments")
 }
 
