@@ -51,13 +51,14 @@ const verifyPayment =async(bookingId : string,tranId: string,status:string,paylo
     const valId = payload.val_id;
     const storeId = config.ssl_comarz_store_id;
     const storePassword = config.ssl_comarz_store_password
-
+console.log(payload,"kdfklasdjfh");
     const response = await axios.post(`https://sandbox.sslcommerz.com/validator/api/validationserverAPI.php?val_id=${valId}&store_id=${storeId}&store_passwd=${storePassword}&format=json`,{
         headers : {
             "Content-Type" : "application/x-www-form-urlencoded"
         }
     })
 
+    console.log(response,"this is ta payment response");
 
     if(response.data.status === "VALID"){
         await prisma.bookings.update({
