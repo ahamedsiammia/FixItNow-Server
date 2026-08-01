@@ -41,6 +41,32 @@ const getAllServices = async (req: Request, res: Response) => {
   }
 };
 
+const getMyService =async(req:Request,res:Response)=>{
+  try {
+    
+
+    const userId = req.user?.id as string;
+
+    const service = await services.getMyServiceIntoDB(userId)
+
+    sendResponse(res, {
+      success: true,
+      statusCode: HttpStatus.OK,
+      message: "Services retrieved successfully",
+      data: service,
+    });
+
+  } catch (error: any) {
+    sendResponse(res, {
+      success: false,
+      statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
+      message: error.message,
+      data: [],
+      error: { error },
+    });
+  }
+}
+
 export const servicesController = {
   getAllServices,
 };

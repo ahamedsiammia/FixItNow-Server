@@ -63,7 +63,37 @@ const getAllServices =async(payload:IServiceFilter,options:paginationI)=>{
   };
 };
 
+const getMyServiceIntoDB = async(userId:string)=>{
+
+  const user = await prisma.user.findUnique({
+    where:{
+      id : userId
+    },
+    include:{
+      technician : true
+    }
+  })
+
+  if(!user){
+    throw new Error("Your Not Login!")
+  }
+
+  const technicianId = user?.technician?.id ;
+  if(!technicianId){
+    throw new Error("Your Not Technician!")
+  }
+  
+  const services =await prisma.services.findMany({
+    where :{
+      technicianId : technicianId
+    }
+  })
+
+  return services
+}
+
 
 export const services ={
-    getAllServices
+    getAllServices,
+    getMyServiceIntoDB
 }
