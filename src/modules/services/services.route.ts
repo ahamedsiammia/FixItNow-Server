@@ -8,6 +8,6 @@ const router = Router();
 
 router.get("/",servicesController.getAllServices)
 
-router.get("/me",auth(userRole.TECHNICIAN,userRole.ADMIN),servicesController.getAllServices)
+router.get("/me",auth(userRole.TECHNICIAN),servicesController.getMyService)
 
 export const servicesRouter = router;

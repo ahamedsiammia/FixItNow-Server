@@ -69,4 +69,5 @@ const getMyService =async(req:Request,res:Response)=>{
 
 export const servicesController = {
   getAllServices,
+  getMyService
 };

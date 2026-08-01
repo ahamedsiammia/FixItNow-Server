@@ -14,9 +14,9 @@ const initiatePayment =async(booking :Bookings,user : User)=>{
 "total_amount":booking.totalAmount,
 "currency":"BDT",
 "tran_id":tranId,
-"success_url":`${config.app_url}/api/payment?bookingId=${booking.id}&tranId=${tranId}&status=success`,
-"fail_url":`${config.app_url}/api/payment?bookingId=${booking.id}&tranId=${tranId}&status=fail`,
-"cancel_url":`${config.app_url}/api/payment?bookingId=${booking.id}&tranId=${tranId}&status=cancel`,
+"success_url":`${config.backend_app_url}/api/payment?bookingId=${booking.id}&tranId=${tranId}&status=success`,
+"fail_url":`${config.backend_app_url}/api/payment?bookingId=${booking.id}&tranId=${tranId}&status=fail`,
+"cancel_url":`${config.backend_app_url}/api/payment?bookingId=${booking.id}&tranId=${tranId}&status=cancel`,
 "cus_name":user.name,
 "cus_email":user.email,
 "cus_add1":user.address,
@@ -29,7 +29,7 @@ const initiatePayment =async(booking :Bookings,user : User)=>{
 "cus_fax":"01711111111"
     };
 
-     
+     console.log(paymentData,"Payment Data");
 
     const response = await axios.post("https://sandbox.sslcommerz.com/gwprocess/v4/api.php",paymentData,{
         headers : {

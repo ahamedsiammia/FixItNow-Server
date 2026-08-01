@@ -58,7 +58,7 @@ const verifyPayment =async(bookingId : string,tranId: string,status:string,paylo
         }
     })
 
-
+console.log(response);
     if(response.data.status === "VALID"){
         await prisma.bookings.update({
         where : {

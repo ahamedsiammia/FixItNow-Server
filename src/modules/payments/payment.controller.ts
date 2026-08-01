@@ -3,6 +3,7 @@ import { sendResponse } from "../../utils/sendResponse";
 import  HttpStatus  from "http-status";
 import { paymentService } from "./payment.service";
 import { paginationI } from "../technician/technician.interface";
+import config from "../../config";
 
 const createPayment =async(req:Request,res:Response)=>{
     try {
@@ -42,7 +43,7 @@ const verifyPayment =async(req:Request,res:Response)=>{
         const response = await paymentService.verifyPayment(bookingId as string,tranId as string,status as string,payload)
 console.log(response,"this is payment response");
         if(response === "success"){
-            return res.redirect("https://siamahamed.netlify.app")
+            return res.redirect(`${config.app_url}/payment/success`)
         }else if(response === "fail"){
             return res.redirect("https://www.memberstack.com/webflow/failed-payment-page?utm_source=Pinterest&utm_medium=organic")
         }else if(response === "cancel") res.redirect("/payment/cancel")

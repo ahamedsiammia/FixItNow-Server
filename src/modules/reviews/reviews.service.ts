@@ -36,7 +36,7 @@ const createReviewsIntoDB = async(payload : IReview,customerId : string)=>{
             }
         });
 
-        return {review}
+        return review
 };
 
 
