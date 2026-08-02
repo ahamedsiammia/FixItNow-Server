@@ -12,6 +12,7 @@ import { servicesRouter } from "./modules/services/services.route";
 import { bookingsRouter } from "./modules/bookings/bookings.router";
 import { paymentRouter } from "./modules/payments/payment.route";
 import globalErrorHandler from "./middlewares/globalErrorHandler";
+import { POST } from "./modules/aichatbort/ai";
 
 const app : Application =  express();
 
