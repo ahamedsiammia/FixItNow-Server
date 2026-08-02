@@ -47,7 +47,8 @@ console.log(response,"this is payment response");
         }else if(response === "fail"){
             return res.redirect("https://www.memberstack.com/webflow/failed-payment-page?utm_source=Pinterest&utm_medium=organic")
         }else if(response === "cancel") res.redirect("/payment/cancel")
-        
+     
+
     } catch (error : any) {
         sendResponse(res,{
             success : false,

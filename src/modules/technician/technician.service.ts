@@ -3,8 +3,8 @@ import { prisma } from "../../lib/prisma";
 import { calculatePagination } from "../../utils/pagination";
 import { BookingStatusI, filteringI, IServices, paginationI, TechnicianI, UpdateTechnicianI } from "./technician.interface";
 
-const createTechnicianProfile =async(payload:TechnicianI,userId:string)=>{
-
+const createTechnicianProfile =async(payload:TechnicianI)=>{
+const userId = payload.userId
     const isExistUser = await prisma.technicianProfiles.findUnique({
         where:{
             userId

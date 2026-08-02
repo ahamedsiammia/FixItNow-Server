@@ -9,18 +9,17 @@ const createTechnician =async(req:Request,res:Response)=>{
 
         const payload = req.body;
 
-        const userId = req.user?.id
 
-        if(!userId){
-            sendResponse(res,{
-            success: false,
-            statusCode:HttpStatus.UNAUTHORIZED,
-            message : " Your not Logged In . Please Logged in to access to this Resource.",
-            data : []
-        })    
-        }
+        // if(!userId){
+        //     sendResponse(res,{
+        //     success: false,
+        //     statusCode:HttpStatus.UNAUTHORIZED,
+        //     message : " Your not Logged In . Please Logged in to access to this Resource.",
+        //     data : []
+        // })    
+        // }
 
-        const result = await technicianService.createTechnicianProfile(payload,userId as string);
+        const result = await technicianService.createTechnicianProfile(payload);
 
         sendResponse(res,{
             success: true,

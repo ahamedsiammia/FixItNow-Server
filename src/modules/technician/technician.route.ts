@@ -5,7 +5,7 @@ import { technicianController } from "./technician.controller";
 
 const router = Router();
 
-router.post("/create-profile",auth(userRole.TECHNICIAN),technicianController.createTechnician)
+router.post("/create-profile",technicianController.createTechnician)
 
 
 router.put("/profile",auth(userRole.TECHNICIAN),technicianController.updateTechnicianProfile)

@@ -1,6 +1,7 @@
 import { BookingStatus } from "../../../generated/prisma/enums"
 
 export interface TechnicianI {
+    userId : string;
     bio ?: string
     experienceYear : number
     skills : string
