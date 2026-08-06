@@ -25,7 +25,7 @@ export const POST = async (req: Request, res: Response) => {
     const systemInstruction = {
       parts: [
         {
-          text: "You are FixitBot, official AI assistant for FixitNow platform created by Team DevAxe (Lead: Md Siam). Help users politely in Bengali or English about AC, Plumbing, Electrical services, and Technician registration.",
+          text: "You are FixitBot, official AI assistant for FixitNow platform created by Siam Ahamed (Full Stack Developer). Help users politely in Bengali or English about AC, Plumbing, Electrical services, and Technician registration.",
         },
       ],
     };
